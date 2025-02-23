@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Primo</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Primo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 21 Feb 2025 15:37:42 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Slipping through defender with a simple shellcode loader</title>
+      <link>http://localhost:1313/posts/slipping-through-defender/</link>
+      <pubDate>Fri, 21 Feb 2025 15:37:42 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/slipping-through-defender/</guid>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This blog is for educational purposes only. The content provided is intended to share knowledge and insights related to cybersecurity.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;shellcode-loader&#34;&gt;Shellcode loader?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;shellcode loader&lt;/strong&gt; is a program designed to execute shellcode within a local or remote process. all shellcode loaders share the same steps when it come to loading a shellcode:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Memory Allocation&lt;/strong&gt; – This is done using functions like &lt;code&gt;KERNEL32!VirtualAlloc(Ex)&lt;/code&gt; or &lt;code&gt;NTDLL!NtAllocateVirtualMemory(Ex)&lt;/code&gt;. .&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy Shellcode&lt;/strong&gt; – The shellcode is then copied into the allocated memory region.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Execute Shellcode&lt;/strong&gt; – Running the shellcode using &lt;code&gt;KERNEL32!CreateThread(Ex)&lt;/code&gt;, &lt;code&gt;NTDLL!NtCreateThread(Ex)&lt;/code&gt; &lt;code&gt;NTDLL!RtlCreateUserThread&lt;/code&gt;, or executing it directly by casting it to a function pointer &lt;code&gt;(void(*)())&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why-you-need-one&#34;&gt;Why you need one?&lt;/h2&gt;
+&lt;p&gt;The cool thing about having a shellcode loader is that you can add techniques for evasion like stack spoofing (&lt;strong&gt;hook windows api used by the beacon and spoof its stack&lt;/strong&gt;), sleep obfuscation (&lt;strong&gt;hook sleep api used by the beacon and encrypt process stack/heap before sleep&lt;/strong&gt;), anti-static/dynamic/sandbox, etc. i&amp;rsquo;ll cover these techniques in later posts. The main purpose, though, is just to load and execute the shellcode.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
