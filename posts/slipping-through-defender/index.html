@@ -53,7 +53,7 @@
         },
         "datePublished": "2025-02-21",
         "description": "",
-        "wordCount":  722 ,
+        "wordCount":  740 ,
         "mainEntityOfPage": "True",
         "dateModified": "2025-02-21",
         "image": {
@@ -68,7 +68,7 @@
     </script>
 
 
-<meta name="generator" content="Hugo 0.143.1">
+<meta name="generator" content="Hugo 0.147.1">
 
     
     <meta property="og:url" content="http://localhost:1313/posts/slipping-through-defender/">
@@ -226,7 +226,7 @@ stroke-linejoin="round" class="feather feather-home">
 <h2 id="why-you-need-one">Why you need one?</h2>
 <p>The cool thing about having a shellcode loader is that you can add techniques for evasion like stack spoofing (<strong>hook windows api used by the beacon and spoof its stack</strong>), sleep obfuscation (<strong>hook sleep api used by the beacon and encrypt process stack/heap before sleep</strong>), anti-static/dynamic/sandbox, etc. i&rsquo;ll cover these techniques in later posts. The main purpose, though, is just to load and execute the shellcode.</p>
 <p>let&rsquo;s cook!
-<img src="/images/w.w-cooking-malware.png" alt=""></p>
+<img src="Slipping-Through-Defender/images/w.w-cooking-malware.png" alt=""></p>
 <h2 id="simple-shellcode-loader">Simple shellcode loader</h2>
 <p>let&rsquo;s start by writing a simple shellcode loader.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
@@ -249,7 +249,19 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span> <span class="mi">0</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Compiling and dropping the file triggers defender. that means we got detect just in the static analysis phase.</p>
-<iframe width="560" height="315" src="https://0xprimo.github.io/videos/defender-detection.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <video controls 
+         width="680"
+         
+         
+         
+         >
+    <source src="http://localhost:1313/Slipping-Through-Defender/videos/defender-detection.mp4" type="video/mp4">
+    Your browser doesn't support video playback.
+  </video>
+</div>
+
+
 <h2 id="how-did-we-get-detected">How did we get detected?</h2>
 <p>AV/EDR software use <strong>static analysis</strong> to identify malicious applications without executing them. One of the primary techniques used in this process is <strong>pattern scanning</strong>, where the AV/EDR scans files for specific byte sequences for example pattern associated with a known malware family or decryption/encryption loop, etc.</p>
 <p>A well-known tool for this purpose is <strong>YARA</strong>, a pattern-scanning tool that allows users to define custom rules for detecting malicious files and processes.</p>
@@ -284,7 +296,146 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">        <span class="n">all</span> <span class="n">of</span> <span class="n">them</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>After scanning the project directory we can see that YARA found files that match the rule we just created.</p>
-<p><img src="/images/yara-detection.png" alt=""></p>
+
+
+
+
+<div class="clickable-image-container">
+    <img src="http://localhost:1313/Slipping-Through-Defender/images/yara-detection.png" 
+         alt="detecting msfvenom shellcode with yara"
+         width="800"
+         
+         class="clickable-image"
+         onclick="openImageModal('img-c4272f9a80d2d0ac254619f972dfd227-1')"
+         style="cursor: pointer;">
+</div>
+
+
+<div id="img-c4272f9a80d2d0ac254619f972dfd227-1" class="image-modal" onclick="closeImageModal('img-c4272f9a80d2d0ac254619f972dfd227-1')">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" src="http://localhost:1313/Slipping-Through-Defender/images/yara-detection.png" alt="detecting msfvenom shellcode with yara">
+    <div class="image-modal-caption">detecting msfvenom shellcode with yara</div>
+</div>
+
+<style>
+.clickable-image {
+    transition: opacity 0.3s ease;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.image-modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.5); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+@media only screen and (max-width: 700px) {
+    .image-modal-content {
+        width: 100%;
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .image-modal-caption {
+        font-size: 14px;
+        bottom: 10px;
+    }
+    
+    .image-modal-close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+</style>
+
+<script>
+function openImageModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.style.overflow = "hidden"; 
+}
+
+function closeImageModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.style.overflow = "auto"; 
+}
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.image-modal');
+        modals.forEach(modal => {
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+});
+</script>
+
 <h2 id="how-can-we-bypass-this-detection">How can we bypass this detection?</h2>
 <p>as i said before the power of having a shellcode loader is you can customize it as you want and add evasion techniques to it to bypass these detections.</p>
 <p>One technique used to bypass static analysis is payload encoding. We simply encode our payload to Base64 and then implement a function to decode it during execution. This way, when the scanner scans our file on the disk, it will only see Base64 string and not the shellcode.</p>
@@ -313,12 +464,23 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span> <span class="mi">0</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>and as you can see defender thinks we&rsquo;re okay.</p>
-<iframe width="560" height="315" src="https://0xprimo.github.io/videos/defender-whats-that.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <video controls 
+         width="680"
+         
+         
+         
+         >
+    <source src="http://localhost:1313/Slipping-Through-Defender/videos/defender-whats-that.mp4" type="video/mp4">
+    Your browser doesn't support video playback.
+  </video>
+</div>
+
+
 <p>let&rsquo;s replace msfvenom shellcode with havoc demon shellcode.</p>
-<iframe width="560" height="315" src="https://0xprimo.github.io/videos/havoc-beacon.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>PoC source code can be found <a href="https://github.com/0xPrimo/blogs-poc/tree/main/Slipping%20through%20defender">here</a></p>
 <h2 id="conclusion">Conclusion</h2>
-<p>To conclude, we’ve covered what a shellcode loader is and its purpose. We also used a simple trick to bypass static analysis. It’s important to note that a memory scanner will most likely detect our shellcode as they will find it not encoded, but there are ways to bypass this, which we’ll cover in later posts. Thanks for reading, and have a great day!</p>
+<p>To conclude, we’ve covered what a shellcode loader is and its purpose. We also used a simple trick to bypass static analysis. It’s important to note that a memory scanner will most likely detect our shellcode as they will find it unencrypted, but there are ways to bypass this, which we’ll cover in later posts. Thanks for reading, and have a great day!</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://gatari.dev/posts/memory-lane/">https://gatari.dev/posts/memory-lane/</a></li>

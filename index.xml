@@ -6,7 +6,24 @@
     <description>Recent content on Primo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 21 Feb 2025 15:37:42 +0100</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jun 2025 12:37:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Red/Blue Team Lab Setup</title>
+      <link>http://localhost:1313/posts/ad-attack-defense-lab-setup/</link>
+      <pubDate>Sun, 15 Jun 2025 12:37:45 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/ad-attack-defense-lab-setup/</guid>
+      
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.&lt;/p&gt;
+&lt;h2 id=&#34;lab-diagram&#34;&gt;Lab Diagram&lt;/h2&gt;
+&lt;p&gt;This diagram shows how our lab will look. We&amp;rsquo;ll use it as a plan for setting up the environment.&lt;/p&gt;
+&lt;p&gt;{&amp;lt; img src=&amp;ldquo;Active-Directory-Attack-Defense/images/lab-diagram.png&amp;rdquo; alt=&amp;ldquo;Lab diagram&amp;rdquo; width=&amp;ldquo;800&amp;rdquo; &amp;gt;}}&lt;/p&gt;
+&lt;h2 id=&#34;elasticsearch-and-kibana&#34;&gt;Elasticsearch and Kibana&lt;/h2&gt;
+&lt;p&gt;Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Slipping through defender with a simple shellcode loader</title>
       <link>http://localhost:1313/posts/slipping-through-defender/</link>

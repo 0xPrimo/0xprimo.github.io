@@ -6,7 +6,161 @@
     <description>Recent content in Posts on Primo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 21 Feb 2025 15:37:42 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jun 2025 12:37:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Active Directory Attack &amp; Defense: Lab setup</title>
+      <link>http://localhost:1313/posts/ad-attack-defense-lab-setup/</link>
+      <pubDate>Sun, 15 Jun 2025 12:37:45 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/ad-attack-defense-lab-setup/</guid>
+      
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;lab-diagram&#34;&gt;Lab Diagram&lt;/h2&gt;
+
+
+
+
+&lt;div class=&#34;clickable-image-container&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; 
+         alt=&#34;Lab diagram&#34;
+         width=&#34;800&#34;
+         
+         class=&#34;clickable-image&#34;
+         onclick=&#34;openImageModal(&#39;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#39;)&#34;
+         style=&#34;cursor: pointer;&#34;&gt;
+&lt;/div&gt;
+
+
+&lt;div id=&#34;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#34; class=&#34;image-modal&#34; onclick=&#34;closeImageModal(&#39;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#39;)&#34;&gt;
+    &lt;span class=&#34;image-modal-close&#34;&gt;&amp;times;&lt;/span&gt;
+    &lt;img class=&#34;image-modal-content&#34; src=&#34;http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; alt=&#34;Lab diagram&#34;&gt;
+    &lt;div class=&#34;image-modal-caption&#34;&gt;Lab diagram&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.clickable-image {
+    transition: opacity 0.3s ease;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.image-modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.5); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+@media only screen and (max-width: 700px) {
+    .image-modal-content {
+        width: 100%;
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .image-modal-caption {
+        font-size: 14px;
+        bottom: 10px;
+    }
+    
+    .image-modal-close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+function openImageModal(modalId) {
+    document.getElementById(modalId).style.display = &#34;block&#34;;
+    document.body.style.overflow = &#34;hidden&#34;; 
+}
+
+function closeImageModal(modalId) {
+    document.getElementById(modalId).style.display = &#34;none&#34;;
+    document.body.style.overflow = &#34;auto&#34;; 
+}
+
+
+document.addEventListener(&#39;keydown&#39;, function(event) {
+    if (event.key === &#39;Escape&#39;) {
+        const modals = document.querySelectorAll(&#39;.image-modal&#39;);
+        modals.forEach(modal =&gt; {
+            if (modal.style.display === &#39;block&#39;) {
+                modal.style.display = &#39;none&#39;;
+                document.body.style.overflow = &#34;auto&#34;;
+            }
+        });
+    }
+});
+&lt;/script&gt;
+
+&lt;h2 id=&#34;elasticsearch-and-kibana&#34;&gt;Elasticsearch and Kibana&lt;/h2&gt;
+&lt;p&gt;Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Slipping through defender with a simple shellcode loader</title>
       <link>http://localhost:1313/posts/slipping-through-defender/</link>
@@ -25,6 +179,31 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;why-you-need-one&#34;&gt;Why you need one?&lt;/h2&gt;
 &lt;p&gt;The cool thing about having a shellcode loader is that you can add techniques for evasion like stack spoofing (&lt;strong&gt;hook windows api used by the beacon and spoof its stack&lt;/strong&gt;), sleep obfuscation (&lt;strong&gt;hook sleep api used by the beacon and encrypt process stack/heap before sleep&lt;/strong&gt;), anti-static/dynamic/sandbox, etc. i&amp;rsquo;ll cover these techniques in later posts. The main purpose, though, is just to load and execute the shellcode.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/notes/</guid>
+      
+      <description>&lt;h4 id=&#34;server01&#34;&gt;SERVER01&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Elasticsearch&lt;/em&gt;: is used for storing and searching data of various types in our case will use it to manage windows event logs.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Kibana&lt;/em&gt;: is Web GUI allow users to search and work with dashboards and visualizations, we will use for agents management also search through collected windows even logs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;server02&#34;&gt;SERVER02&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Fleet server&lt;/em&gt;: having fleet server will allow as manage multiple agents running on diffrents endpoints and apply or update policy to them. this is will help for scaleability if we are in a production envirement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;dc01&#34;&gt;DC01&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Active Directory Domain Services (AD DS)&lt;/em&gt;: provides the methods for storing directory data and making this data available to network users and administrators.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Sysmon&lt;/em&gt;: is used for logs collection windows already collection logs but they are not enogh so we will install sysmon to get as much telemetry as possible this will give as more view on the envirement and detecting threats.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Fleet agent&lt;/em&gt;: Elastic Agent is a single, unified way to add monitoring for logs, metrics, and other types of data to a host. It can also protect hosts from security threats, query data from operating systems, forward data from remote services or hardware, and more. A single agent makes it easier and faster to deploy monitoring across your infrastructure. Each agent has a single policy you can update to add integrations for new data sources, security protections, and more.&lt;/li&gt;
+&lt;/ul&gt;</description>
       
     </item>
     
