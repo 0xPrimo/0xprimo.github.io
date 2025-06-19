@@ -8,14 +8,16 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 15 Jun 2025 12:37:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Active Directory Attack &amp; Defense: Lab setup</title>
+      <title>Red/Blue Team Lab Setup</title>
       <link>http://localhost:1313/posts/ad-attack-defense-lab-setup/</link>
       <pubDate>Sun, 15 Jun 2025 12:37:45 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/ad-attack-defense-lab-setup/</guid>
       
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.&lt;/p&gt;
 &lt;h2 id=&#34;lab-diagram&#34;&gt;Lab Diagram&lt;/h2&gt;
+&lt;p&gt;This diagram shows how our lab will look. We&amp;rsquo;ll use it as a plan for setting up the environment.&lt;/p&gt;
 
 
 
@@ -179,31 +181,6 @@ document.addEventListener(&#39;keydown&#39;, function(event) {
 &lt;/ol&gt;
 &lt;h2 id=&#34;why-you-need-one&#34;&gt;Why you need one?&lt;/h2&gt;
 &lt;p&gt;The cool thing about having a shellcode loader is that you can add techniques for evasion like stack spoofing (&lt;strong&gt;hook windows api used by the beacon and spoof its stack&lt;/strong&gt;), sleep obfuscation (&lt;strong&gt;hook sleep api used by the beacon and encrypt process stack/heap before sleep&lt;/strong&gt;), anti-static/dynamic/sandbox, etc. i&amp;rsquo;ll cover these techniques in later posts. The main purpose, though, is just to load and execute the shellcode.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/notes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/notes/</guid>
-      
-      <description>&lt;h4 id=&#34;server01&#34;&gt;SERVER01&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Elasticsearch&lt;/em&gt;: is used for storing and searching data of various types in our case will use it to manage windows event logs.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Kibana&lt;/em&gt;: is Web GUI allow users to search and work with dashboards and visualizations, we will use for agents management also search through collected windows even logs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;server02&#34;&gt;SERVER02&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Fleet server&lt;/em&gt;: having fleet server will allow as manage multiple agents running on diffrents endpoints and apply or update policy to them. this is will help for scaleability if we are in a production envirement.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;dc01&#34;&gt;DC01&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Active Directory Domain Services (AD DS)&lt;/em&gt;: provides the methods for storing directory data and making this data available to network users and administrators.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Sysmon&lt;/em&gt;: is used for logs collection windows already collection logs but they are not enogh so we will install sysmon to get as much telemetry as possible this will give as more view on the envirement and detecting threats.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Fleet agent&lt;/em&gt;: Elastic Agent is a single, unified way to add monitoring for logs, metrics, and other types of data to a host. It can also protect hosts from security threats, query data from operating systems, forward data from remote services or hardware, and more. A single agent makes it easier and faster to deploy monitoring across your infrastructure. Each agent has a single policy you can update to add integrations for new data sources, security protections, and more.&lt;/li&gt;
-&lt;/ul&gt;</description>
       
     </item>
     

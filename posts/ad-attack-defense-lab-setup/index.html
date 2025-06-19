@@ -53,7 +53,7 @@
         },
         "datePublished": "2025-06-15",
         "description": "",
-        "wordCount":  1169 ,
+        "wordCount":  1165 ,
         "mainEntityOfPage": "True",
         "dateModified": "2025-06-15",
         "image": {
@@ -76,8 +76,7 @@
   <meta property="og:title" content="Red/Blue Team Lab Setup">
   <meta property="og:description" content="Introduction This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.
 Lab Diagram This diagram shows how our lab will look. We’ll use it as a plan for setting up the environment.
-{&lt; img src=“Active-Directory-Attack-Defense/images/lab-diagram.png” alt=“Lab diagram” width=“800” &gt;}}
-Elasticsearch and Kibana Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.">
+× Lab diagram Elasticsearch and Kibana Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.">
   <meta property="og:locale" content="en_gb">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -91,8 +90,7 @@ Elasticsearch and Kibana Before installing Elasticsearch and Kibana, we need to 
   <meta name="twitter:title" content="Red/Blue Team Lab Setup">
   <meta name="twitter:description" content="Introduction This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.
 Lab Diagram This diagram shows how our lab will look. We’ll use it as a plan for setting up the environment.
-{&lt; img src=“Active-Directory-Attack-Defense/images/lab-diagram.png” alt=“Lab diagram” width=“800” &gt;}}
-Elasticsearch and Kibana Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.">
+× Lab diagram Elasticsearch and Kibana Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.">
 
 
     
@@ -230,7 +228,146 @@ stroke-linejoin="round" class="feather feather-home">
 <p>This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.</p>
 <h2 id="lab-diagram">Lab Diagram</h2>
 <p>This diagram shows how our lab will look. We&rsquo;ll use it as a plan for setting up the environment.</p>
-<p>{&lt; img src=&ldquo;Active-Directory-Attack-Defense/images/lab-diagram.png&rdquo; alt=&ldquo;Lab diagram&rdquo; width=&ldquo;800&rdquo; &gt;}}</p>
+
+
+
+
+<div class="clickable-image-container">
+    <img src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png" 
+         alt="Lab diagram"
+         width="800"
+         
+         class="clickable-image"
+         onclick="openImageModal('img-c2a7eec18fb44e5e5366c92f91a4657c-0')"
+         style="cursor: pointer;">
+</div>
+
+
+<div id="img-c2a7eec18fb44e5e5366c92f91a4657c-0" class="image-modal" onclick="closeImageModal('img-c2a7eec18fb44e5e5366c92f91a4657c-0')">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png" alt="Lab diagram">
+    <div class="image-modal-caption">Lab diagram</div>
+</div>
+
+<style>
+.clickable-image {
+    transition: opacity 0.3s ease;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.image-modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.5); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+@media only screen and (max-width: 700px) {
+    .image-modal-content {
+        width: 100%;
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .image-modal-caption {
+        font-size: 14px;
+        bottom: 10px;
+    }
+    
+    .image-modal-close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+</style>
+
+<script>
+function openImageModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.style.overflow = "hidden"; 
+}
+
+function closeImageModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.style.overflow = "auto"; 
+}
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.image-modal');
+        modals.forEach(modal => {
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+});
+</script>
+
 <h2 id="elasticsearch-and-kibana">Elasticsearch and Kibana</h2>
 <p>Before installing Elasticsearch and Kibana, we need to assign a static IP address to our machine as shown in the lab diagram. This can be done by modifying the configuration file located at /etc/netplan/50-cloud-init.yaml.</p>
 
@@ -243,12 +380,12 @@ stroke-linejoin="round" class="feather feather-home">
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-f9b4bced907e670e01cdb0ef4e76fb16-0')"
+         onclick="openImageModal('img-f9b4bced907e670e01cdb0ef4e76fb16-1')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-f9b4bced907e670e01cdb0ef4e76fb16-0" class="image-modal" onclick="closeImageModal('img-f9b4bced907e670e01cdb0ef4e76fb16-0')">
+<div id="img-f9b4bced907e670e01cdb0ef4e76fb16-1" class="image-modal" onclick="closeImageModal('img-f9b4bced907e670e01cdb0ef4e76fb16-1')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/adapter-config-file.png" alt="Adapter Config File">
     <div class="image-modal-caption">Adapter Config File</div>
@@ -396,12 +533,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-3b26f32f59c8e65a6a747e2e130efa04-1')"
+         onclick="openImageModal('img-3b26f32f59c8e65a6a747e2e130efa04-2')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-3b26f32f59c8e65a6a747e2e130efa04-1" class="image-modal" onclick="closeImageModal('img-3b26f32f59c8e65a6a747e2e130efa04-1')">
+<div id="img-3b26f32f59c8e65a6a747e2e130efa04-2" class="image-modal" onclick="closeImageModal('img-3b26f32f59c8e65a6a747e2e130efa04-2')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/adapter-info.png" alt="Adapter Info">
     <div class="image-modal-caption">Adapter Info</div>
@@ -542,12 +679,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-7d5a06559ba6d12bd0a7bc7a5018cea3-2')"
+         onclick="openImageModal('img-7d5a06559ba6d12bd0a7bc7a5018cea3-3')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-7d5a06559ba6d12bd0a7bc7a5018cea3-2" class="image-modal" onclick="closeImageModal('img-7d5a06559ba6d12bd0a7bc7a5018cea3-2')">
+<div id="img-7d5a06559ba6d12bd0a7bc7a5018cea3-3" class="image-modal" onclick="closeImageModal('img-7d5a06559ba6d12bd0a7bc7a5018cea3-3')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elasticsearch-superuser-password.png" alt="Elasticsearch Superuser Password">
     <div class="image-modal-caption">Elasticsearch Superuser Password</div>
@@ -683,12 +820,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-fbed53a575b011ddbacabb2ce1076ba0-3')"
+         onclick="openImageModal('img-fbed53a575b011ddbacabb2ce1076ba0-4')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-fbed53a575b011ddbacabb2ce1076ba0-3" class="image-modal" onclick="closeImageModal('img-fbed53a575b011ddbacabb2ce1076ba0-3')">
+<div id="img-fbed53a575b011ddbacabb2ce1076ba0-4" class="image-modal" onclick="closeImageModal('img-fbed53a575b011ddbacabb2ce1076ba0-4')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elasticsearch-config.png" alt="Elasticsearch Config">
     <div class="image-modal-caption">Elasticsearch Config</div>
@@ -826,12 +963,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-e9928b0aa2901cf20aa534f85397b81b-4')"
+         onclick="openImageModal('img-e9928b0aa2901cf20aa534f85397b81b-5')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-e9928b0aa2901cf20aa534f85397b81b-4" class="image-modal" onclick="closeImageModal('img-e9928b0aa2901cf20aa534f85397b81b-4')">
+<div id="img-e9928b0aa2901cf20aa534f85397b81b-5" class="image-modal" onclick="closeImageModal('img-e9928b0aa2901cf20aa534f85397b81b-5')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elasticsearch-service-running.png" alt="Elasticsearch Service">
     <div class="image-modal-caption">Elasticsearch Service</div>
@@ -969,12 +1106,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-b7ca2741da2cb65fd02846f907116eb3-5')"
+         onclick="openImageModal('img-b7ca2741da2cb65fd02846f907116eb3-6')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-b7ca2741da2cb65fd02846f907116eb3-5" class="image-modal" onclick="closeImageModal('img-b7ca2741da2cb65fd02846f907116eb3-5')">
+<div id="img-b7ca2741da2cb65fd02846f907116eb3-6" class="image-modal" onclick="closeImageModal('img-b7ca2741da2cb65fd02846f907116eb3-6')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/download-kibana-debian-package.png" alt="Download Kibana Package">
     <div class="image-modal-caption">Download Kibana Package</div>
@@ -1111,12 +1248,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-48de2978b9be265ab42b86149c884b42-6')"
+         onclick="openImageModal('img-48de2978b9be265ab42b86149c884b42-7')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-48de2978b9be265ab42b86149c884b42-6" class="image-modal" onclick="closeImageModal('img-48de2978b9be265ab42b86149c884b42-6')">
+<div id="img-48de2978b9be265ab42b86149c884b42-7" class="image-modal" onclick="closeImageModal('img-48de2978b9be265ab42b86149c884b42-7')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-install.png" alt="Installing Kibana Package">
     <div class="image-modal-caption">Installing Kibana Package</div>
@@ -1252,12 +1389,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-a91e44783445ea93c8898e7cd7c5cfc6-7')"
+         onclick="openImageModal('img-a91e44783445ea93c8898e7cd7c5cfc6-8')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-a91e44783445ea93c8898e7cd7c5cfc6-7" class="image-modal" onclick="closeImageModal('img-a91e44783445ea93c8898e7cd7c5cfc6-7')">
+<div id="img-a91e44783445ea93c8898e7cd7c5cfc6-8" class="image-modal" onclick="closeImageModal('img-a91e44783445ea93c8898e7cd7c5cfc6-8')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-config.png" alt="Kibana Config">
     <div class="image-modal-caption">Kibana Config</div>
@@ -1396,12 +1533,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-1b1b3e34cf23b0f3cb30dd59c5eda863-8')"
+         onclick="openImageModal('img-1b1b3e34cf23b0f3cb30dd59c5eda863-9')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-1b1b3e34cf23b0f3cb30dd59c5eda863-8" class="image-modal" onclick="closeImageModal('img-1b1b3e34cf23b0f3cb30dd59c5eda863-8')">
+<div id="img-1b1b3e34cf23b0f3cb30dd59c5eda863-9" class="image-modal" onclick="closeImageModal('img-1b1b3e34cf23b0f3cb30dd59c5eda863-9')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-service-running.png" alt="Kibana Service Status">
     <div class="image-modal-caption">Kibana Service Status</div>
@@ -1537,12 +1674,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-9562b60caee38bccb0e019b187b5a269-9')"
+         onclick="openImageModal('img-9562b60caee38bccb0e019b187b5a269-10')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-9562b60caee38bccb0e019b187b5a269-9" class="image-modal" onclick="closeImageModal('img-9562b60caee38bccb0e019b187b5a269-9')">
+<div id="img-9562b60caee38bccb0e019b187b5a269-10" class="image-modal" onclick="closeImageModal('img-9562b60caee38bccb0e019b187b5a269-10')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/set-vms-hostname.png" alt="Set Hostname to VMs">
     <div class="image-modal-caption">Set Hostname to VMs</div>
@@ -1678,12 +1815,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-21f762d2af601877e080d147c9e337ef-10')"
+         onclick="openImageModal('img-21f762d2af601877e080d147c9e337ef-11')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-21f762d2af601877e080d147c9e337ef-10" class="image-modal" onclick="closeImageModal('img-21f762d2af601877e080d147c9e337ef-10')">
+<div id="img-21f762d2af601877e080d147c9e337ef-11" class="image-modal" onclick="closeImageModal('img-21f762d2af601877e080d147c9e337ef-11')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elasticsearch-token.png" alt="Kibana Ask for enrollment token">
     <div class="image-modal-caption">Kibana Ask for enrollment token</div>
@@ -1822,12 +1959,12 @@ the following command will generate the enrollment token:</p>
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-6983dbfd3d8f007fa17aeea1463b5c02-11')"
+         onclick="openImageModal('img-6983dbfd3d8f007fa17aeea1463b5c02-12')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-6983dbfd3d8f007fa17aeea1463b5c02-11" class="image-modal" onclick="closeImageModal('img-6983dbfd3d8f007fa17aeea1463b5c02-11')">
+<div id="img-6983dbfd3d8f007fa17aeea1463b5c02-12" class="image-modal" onclick="closeImageModal('img-6983dbfd3d8f007fa17aeea1463b5c02-12')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elasticsearch-enrollment-token.png" alt="Generate elasticsearch enrollment token">
     <div class="image-modal-caption">Generate elasticsearch enrollment token</div>
@@ -1963,12 +2100,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-e9b5251eaa38565fbca97d80164e71a5-12')"
+         onclick="openImageModal('img-e9b5251eaa38565fbca97d80164e71a5-13')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-e9b5251eaa38565fbca97d80164e71a5-12" class="image-modal" onclick="closeImageModal('img-e9b5251eaa38565fbca97d80164e71a5-12')">
+<div id="img-e9b5251eaa38565fbca97d80164e71a5-13" class="image-modal" onclick="closeImageModal('img-e9b5251eaa38565fbca97d80164e71a5-13')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/verification-code.png" alt="Verification code">
     <div class="image-modal-caption">Verification code</div>
@@ -2104,12 +2241,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-e6013a369d0d96f5ed728f342dbba8f7-13')"
+         onclick="openImageModal('img-e6013a369d0d96f5ed728f342dbba8f7-14')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-e6013a369d0d96f5ed728f342dbba8f7-13" class="image-modal" onclick="closeImageModal('img-e6013a369d0d96f5ed728f342dbba8f7-13')">
+<div id="img-e6013a369d0d96f5ed728f342dbba8f7-14" class="image-modal" onclick="closeImageModal('img-e6013a369d0d96f5ed728f342dbba8f7-14')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-user-interface.png" alt="Elastic Dashboard">
     <div class="image-modal-caption">Elastic Dashboard</div>
@@ -2245,12 +2382,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-ee8ab4f4a61359d84e7432039c6e84a0-14')"
+         onclick="openImageModal('img-ee8ab4f4a61359d84e7432039c6e84a0-15')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-ee8ab4f4a61359d84e7432039c6e84a0-14" class="image-modal" onclick="closeImageModal('img-ee8ab4f4a61359d84e7432039c6e84a0-14')">
+<div id="img-ee8ab4f4a61359d84e7432039c6e84a0-15" class="image-modal" onclick="closeImageModal('img-ee8ab4f4a61359d84e7432039c6e84a0-15')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-error.png" alt="Kibana error">
     <div class="image-modal-caption">Kibana error</div>
@@ -2386,12 +2523,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-e03a647fc3d0a000077bc5a66ba68c7b-15')"
+         onclick="openImageModal('img-e03a647fc3d0a000077bc5a66ba68c7b-16')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-e03a647fc3d0a000077bc5a66ba68c7b-15" class="image-modal" onclick="closeImageModal('img-e03a647fc3d0a000077bc5a66ba68c7b-15')">
+<div id="img-e03a647fc3d0a000077bc5a66ba68c7b-16" class="image-modal" onclick="closeImageModal('img-e03a647fc3d0a000077bc5a66ba68c7b-16')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-keys.png" alt="Kibana keys">
     <div class="image-modal-caption">Kibana keys</div>
@@ -2527,12 +2664,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-c4901693477f6079efeced710cf49e75-16')"
+         onclick="openImageModal('img-c4901693477f6079efeced710cf49e75-17')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-c4901693477f6079efeced710cf49e75-16" class="image-modal" onclick="closeImageModal('img-c4901693477f6079efeced710cf49e75-16')">
+<div id="img-c4901693477f6079efeced710cf49e75-17" class="image-modal" onclick="closeImageModal('img-c4901693477f6079efeced710cf49e75-17')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-add-keys.png" alt="Adding keys to kibana">
     <div class="image-modal-caption">Adding keys to kibana</div>
@@ -2668,12 +2805,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-a5ef309c892cea926cfc089155c0c7cf-17')"
+         onclick="openImageModal('img-a5ef309c892cea926cfc089155c0c7cf-18')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-a5ef309c892cea926cfc089155c0c7cf-17" class="image-modal" onclick="closeImageModal('img-a5ef309c892cea926cfc089155c0c7cf-17')">
+<div id="img-a5ef309c892cea926cfc089155c0c7cf-18" class="image-modal" onclick="closeImageModal('img-a5ef309c892cea926cfc089155c0c7cf-18')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-no-errors.png" alt="Kibana alert dashboard">
     <div class="image-modal-caption">Kibana alert dashboard</div>
@@ -2811,12 +2948,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-e088eddb07c8649e4ab9e6d52686ff85-18')"
+         onclick="openImageModal('img-e088eddb07c8649e4ab9e6d52686ff85-19')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-e088eddb07c8649e4ab9e6d52686ff85-18" class="image-modal" onclick="closeImageModal('img-e088eddb07c8649e4ab9e6d52686ff85-18')">
+<div id="img-e088eddb07c8649e4ab9e6d52686ff85-19" class="image-modal" onclick="closeImageModal('img-e088eddb07c8649e4ab9e6d52686ff85-19')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/fleet-server-setup.png" alt="Add Fleet Server">
     <div class="image-modal-caption">Add Fleet Server</div>
@@ -2952,12 +3089,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-ed550015f2bf170268d47e718ebd6525-19')"
+         onclick="openImageModal('img-ed550015f2bf170268d47e718ebd6525-20')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-ed550015f2bf170268d47e718ebd6525-19" class="image-modal" onclick="closeImageModal('img-ed550015f2bf170268d47e718ebd6525-19')">
+<div id="img-ed550015f2bf170268d47e718ebd6525-20" class="image-modal" onclick="closeImageModal('img-ed550015f2bf170268d47e718ebd6525-20')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/fleet-server-name-url.png" alt="Fleet Server Configuration">
     <div class="image-modal-caption">Fleet Server Configuration</div>
@@ -3093,12 +3230,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-2f696063f0b3509943ad908c47442904-20')"
+         onclick="openImageModal('img-2f696063f0b3509943ad908c47442904-21')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-2f696063f0b3509943ad908c47442904-20" class="image-modal" onclick="closeImageModal('img-2f696063f0b3509943ad908c47442904-20')">
+<div id="img-2f696063f0b3509943ad908c47442904-21" class="image-modal" onclick="closeImageModal('img-2f696063f0b3509943ad908c47442904-21')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/fleet-server-install-command.png" alt="Fleet Server Install Command">
     <div class="image-modal-caption">Fleet Server Install Command</div>
@@ -3234,12 +3371,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-8ec3f9d25248088c02b069c8e9bd7e2b-21')"
+         onclick="openImageModal('img-8ec3f9d25248088c02b069c8e9bd7e2b-22')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-8ec3f9d25248088c02b069c8e9bd7e2b-21" class="image-modal" onclick="closeImageModal('img-8ec3f9d25248088c02b069c8e9bd7e2b-21')">
+<div id="img-8ec3f9d25248088c02b069c8e9bd7e2b-22" class="image-modal" onclick="closeImageModal('img-8ec3f9d25248088c02b069c8e9bd7e2b-22')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/fleet-server-connected.png" alt="Fleet Server Connected">
     <div class="image-modal-caption">Fleet Server Connected</div>
@@ -3379,12 +3516,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-b6d3af90797ab3734790ca4c32366535-22')"
+         onclick="openImageModal('img-b6d3af90797ab3734790ca4c32366535-23')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-b6d3af90797ab3734790ca4c32366535-22" class="image-modal" onclick="closeImageModal('img-b6d3af90797ab3734790ca4c32366535-22')">
+<div id="img-b6d3af90797ab3734790ca4c32366535-23" class="image-modal" onclick="closeImageModal('img-b6d3af90797ab3734790ca4c32366535-23')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/sysmon-download-page.png" alt="Sysmon Download Page">
     <div class="image-modal-caption">Sysmon Download Page</div>
@@ -3521,12 +3658,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-8ccaea2b58a394cd858e7f3720c86516-23')"
+         onclick="openImageModal('img-8ccaea2b58a394cd858e7f3720c86516-24')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-8ccaea2b58a394cd858e7f3720c86516-23" class="image-modal" onclick="closeImageModal('img-8ccaea2b58a394cd858e7f3720c86516-23')">
+<div id="img-8ccaea2b58a394cd858e7f3720c86516-24" class="image-modal" onclick="closeImageModal('img-8ccaea2b58a394cd858e7f3720c86516-24')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/sysmon-cred-dump-rule.png" alt="Sysmon Credential Dumping Rule Example">
     <div class="image-modal-caption">Sysmon Credential Dumping Rule Example</div>
@@ -3662,12 +3799,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-9d9655d4adf8ce798e0786afadfc739c-24')"
+         onclick="openImageModal('img-9d9655d4adf8ce798e0786afadfc739c-25')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-9d9655d4adf8ce798e0786afadfc739c-24" class="image-modal" onclick="closeImageModal('img-9d9655d4adf8ce798e0786afadfc739c-24')">
+<div id="img-9d9655d4adf8ce798e0786afadfc739c-25" class="image-modal" onclick="closeImageModal('img-9d9655d4adf8ce798e0786afadfc739c-25')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/sysmon-installed.png" alt="Sysmon is Insalled">
     <div class="image-modal-caption">Sysmon is Insalled</div>
@@ -3804,12 +3941,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-4496b6b58fcf89c8aee0f99113493a0d-25')"
+         onclick="openImageModal('img-4496b6b58fcf89c8aee0f99113493a0d-26')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-4496b6b58fcf89c8aee0f99113493a0d-25" class="image-modal" onclick="closeImageModal('img-4496b6b58fcf89c8aee0f99113493a0d-25')">
+<div id="img-4496b6b58fcf89c8aee0f99113493a0d-26" class="image-modal" onclick="closeImageModal('img-4496b6b58fcf89c8aee0f99113493a0d-26')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elastic-add-new-agent.png" alt="Add New Agent">
     <div class="image-modal-caption">Add New Agent</div>
@@ -3945,12 +4082,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-71dcba7218ab270546bd6fc354df86b0-26')"
+         onclick="openImageModal('img-71dcba7218ab270546bd6fc354df86b0-27')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-71dcba7218ab270546bd6fc354df86b0-26" class="image-modal" onclick="closeImageModal('img-71dcba7218ab270546bd6fc354df86b0-26')">
+<div id="img-71dcba7218ab270546bd6fc354df86b0-27" class="image-modal" onclick="closeImageModal('img-71dcba7218ab270546bd6fc354df86b0-27')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elastic-select-enroll.png" alt="Select Enroll in Fleet">
     <div class="image-modal-caption">Select Enroll in Fleet</div>
@@ -4086,12 +4223,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-4711aa13e45a6bb8d55328c6a9e30685-27')"
+         onclick="openImageModal('img-4711aa13e45a6bb8d55328c6a9e30685-28')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-4711aa13e45a6bb8d55328c6a9e30685-27" class="image-modal" onclick="closeImageModal('img-4711aa13e45a6bb8d55328c6a9e30685-27')">
+<div id="img-4711aa13e45a6bb8d55328c6a9e30685-28" class="image-modal" onclick="closeImageModal('img-4711aa13e45a6bb8d55328c6a9e30685-28')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elastic-select-windows.png" alt="Select Windows">
     <div class="image-modal-caption">Select Windows</div>
@@ -4227,12 +4364,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-6fc6a01a0f762e62c5fed578b6fdca9e-28')"
+         onclick="openImageModal('img-6fc6a01a0f762e62c5fed578b6fdca9e-29')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-6fc6a01a0f762e62c5fed578b6fdca9e-28" class="image-modal" onclick="closeImageModal('img-6fc6a01a0f762e62c5fed578b6fdca9e-28')">
+<div id="img-6fc6a01a0f762e62c5fed578b6fdca9e-29" class="image-modal" onclick="closeImageModal('img-6fc6a01a0f762e62c5fed578b6fdca9e-29')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/insecure-flag-before-installing.png" alt="Select Windows">
     <div class="image-modal-caption">Select Windows</div>
@@ -4368,12 +4505,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-183246362a70d79f4343b612c280c8cc-29')"
+         onclick="openImageModal('img-183246362a70d79f4343b612c280c8cc-30')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-183246362a70d79f4343b612c280c8cc-29" class="image-modal" onclick="closeImageModal('img-183246362a70d79f4343b612c280c8cc-29')">
+<div id="img-183246362a70d79f4343b612c280c8cc-30" class="image-modal" onclick="closeImageModal('img-183246362a70d79f4343b612c280c8cc-30')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/elastic-agent-dc01-status.png" alt="DC01 status">
     <div class="image-modal-caption">DC01 status</div>
@@ -4510,12 +4647,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-d9f3793c2916c75d629c96039cb9b683-30')"
+         onclick="openImageModal('img-d9f3793c2916c75d629c96039cb9b683-31')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-d9f3793c2916c75d629c96039cb9b683-30" class="image-modal" onclick="closeImageModal('img-d9f3793c2916c75d629c96039cb9b683-30')">
+<div id="img-d9f3793c2916c75d629c96039cb9b683-31" class="image-modal" onclick="closeImageModal('img-d9f3793c2916c75d629c96039cb9b683-31')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-add-integration.png" alt="Goto Integration">
     <div class="image-modal-caption">Goto Integration</div>
@@ -4651,12 +4788,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-d95aa92eb8da855ad8f48d7700702dec-31')"
+         onclick="openImageModal('img-d95aa92eb8da855ad8f48d7700702dec-32')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-d95aa92eb8da855ad8f48d7700702dec-31" class="image-modal" onclick="closeImageModal('img-d95aa92eb8da855ad8f48d7700702dec-31')">
+<div id="img-d95aa92eb8da855ad8f48d7700702dec-32" class="image-modal" onclick="closeImageModal('img-d95aa92eb8da855ad8f48d7700702dec-32')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-custom-windows-integration.png" alt="Search for &#39;Custom Windows Event Logs&#39;">
     <div class="image-modal-caption">Search for &#39;Custom Windows Event Logs&#39;</div>
@@ -4792,12 +4929,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-08a5f555507ed4a9a9f258c294f7de31-32')"
+         onclick="openImageModal('img-08a5f555507ed4a9a9f258c294f7de31-33')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-08a5f555507ed4a9a9f258c294f7de31-32" class="image-modal" onclick="closeImageModal('img-08a5f555507ed4a9a9f258c294f7de31-32')">
+<div id="img-08a5f555507ed4a9a9f258c294f7de31-33" class="image-modal" onclick="closeImageModal('img-08a5f555507ed4a9a9f258c294f7de31-33')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-integration-page.png" alt="Custom Windows Event Logs Integration">
     <div class="image-modal-caption">Custom Windows Event Logs Integration</div>
@@ -4933,12 +5070,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-fd6e28a9a56c3067dc9f30381020c62f-33')"
+         onclick="openImageModal('img-fd6e28a9a56c3067dc9f30381020c62f-34')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-fd6e28a9a56c3067dc9f30381020c62f-33" class="image-modal" onclick="closeImageModal('img-fd6e28a9a56c3067dc9f30381020c62f-33')">
+<div id="img-fd6e28a9a56c3067dc9f30381020c62f-34" class="image-modal" onclick="closeImageModal('img-fd6e28a9a56c3067dc9f30381020c62f-34')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-integration-config-dc01.png" alt="DC01 Custom Windows Event Logs Integration Config">
     <div class="image-modal-caption">DC01 Custom Windows Event Logs Integration Config</div>
@@ -5074,12 +5211,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-93f028c4d667c5d954067322fb65325e-34')"
+         onclick="openImageModal('img-93f028c4d667c5d954067322fb65325e-35')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-93f028c4d667c5d954067322fb65325e-34" class="image-modal" onclick="closeImageModal('img-93f028c4d667c5d954067322fb65325e-34')">
+<div id="img-93f028c4d667c5d954067322fb65325e-35" class="image-modal" onclick="closeImageModal('img-93f028c4d667c5d954067322fb65325e-35')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-select-host-to-apply-integration.png" alt="Select Hosts to apply policy to">
     <div class="image-modal-caption">Select Hosts to apply policy to</div>
@@ -5216,12 +5353,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-58af43174ad88fd0e1be2f5370cd712b-35')"
+         onclick="openImageModal('img-58af43174ad88fd0e1be2f5370cd712b-36')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-58af43174ad88fd0e1be2f5370cd712b-35" class="image-modal" onclick="closeImageModal('img-58af43174ad88fd0e1be2f5370cd712b-35')">
+<div id="img-58af43174ad88fd0e1be2f5370cd712b-36" class="image-modal" onclick="closeImageModal('img-58af43174ad88fd0e1be2f5370cd712b-36')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-integration-defender.png" alt="Add Itegration for Windows Defender logs collection">
     <div class="image-modal-caption">Add Itegration for Windows Defender logs collection</div>
@@ -5357,12 +5494,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-9070393e14e6dfc3c44e7b45be1a679b-36')"
+         onclick="openImageModal('img-9070393e14e6dfc3c44e7b45be1a679b-37')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-9070393e14e6dfc3c44e7b45be1a679b-36" class="image-modal" onclick="closeImageModal('img-9070393e14e6dfc3c44e7b45be1a679b-36')">
+<div id="img-9070393e14e6dfc3c44e7b45be1a679b-37" class="image-modal" onclick="closeImageModal('img-9070393e14e6dfc3c44e7b45be1a679b-37')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-defender-include-events.png" alt="Include Windows Defender Events">
     <div class="image-modal-caption">Include Windows Defender Events</div>
@@ -5498,12 +5635,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-b372be4a660d2796c8cac46f6f7810a4-37')"
+         onclick="openImageModal('img-b372be4a660d2796c8cac46f6f7810a4-38')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-b372be4a660d2796c8cac46f6f7810a4-37" class="image-modal" onclick="closeImageModal('img-b372be4a660d2796c8cac46f6f7810a4-37')">
+<div id="img-b372be4a660d2796c8cac46f6f7810a4-38" class="image-modal" onclick="closeImageModal('img-b372be4a660d2796c8cac46f6f7810a4-38')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/kibana-add-itegration-to-dc01.png" alt="Include Windows Defender Events">
     <div class="image-modal-caption">Include Windows Defender Events</div>
@@ -5641,12 +5778,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-a4d0144d25c1a487c7de3c53d002cd2d-38')"
+         onclick="openImageModal('img-a4d0144d25c1a487c7de3c53d002cd2d-39')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-a4d0144d25c1a487c7de3c53d002cd2d-38" class="image-modal" onclick="closeImageModal('img-a4d0144d25c1a487c7de3c53d002cd2d-38')">
+<div id="img-a4d0144d25c1a487c7de3c53d002cd2d-39" class="image-modal" onclick="closeImageModal('img-a4d0144d25c1a487c7de3c53d002cd2d-39')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-1.png" alt="Running whoami.exe">
     <div class="image-modal-caption">Running whoami.exe</div>
@@ -5782,12 +5919,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-2acc019ad3247c5cff0f7444d7e40a53-39')"
+         onclick="openImageModal('img-2acc019ad3247c5cff0f7444d7e40a53-40')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-2acc019ad3247c5cff0f7444d7e40a53-39" class="image-modal" onclick="closeImageModal('img-2acc019ad3247c5cff0f7444d7e40a53-39')">
+<div id="img-2acc019ad3247c5cff0f7444d7e40a53-40" class="image-modal" onclick="closeImageModal('img-2acc019ad3247c5cff0f7444d7e40a53-40')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-1-1.png" alt="Search filter">
     <div class="image-modal-caption">Search filter</div>
@@ -5923,12 +6060,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-9053b273f64cd0d7f373c048100d1a5b-40')"
+         onclick="openImageModal('img-9053b273f64cd0d7f373c048100d1a5b-41')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-9053b273f64cd0d7f373c048100d1a5b-40" class="image-modal" onclick="closeImageModal('img-9053b273f64cd0d7f373c048100d1a5b-40')">
+<div id="img-9053b273f64cd0d7f373c048100d1a5b-41" class="image-modal" onclick="closeImageModal('img-9053b273f64cd0d7f373c048100d1a5b-41')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-1-2.png" alt="Checking log provider">
     <div class="image-modal-caption">Checking log provider</div>
@@ -6065,12 +6202,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-37c6149fa1f1883033264832866b083b-41')"
+         onclick="openImageModal('img-37c6149fa1f1883033264832866b083b-42')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-37c6149fa1f1883033264832866b083b-41" class="image-modal" onclick="closeImageModal('img-37c6149fa1f1883033264832866b083b-41')">
+<div id="img-37c6149fa1f1883033264832866b083b-42" class="image-modal" onclick="closeImageModal('img-37c6149fa1f1883033264832866b083b-42')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-2.png" alt="Disable Windows Defender">
     <div class="image-modal-caption">Disable Windows Defender</div>
@@ -6206,12 +6343,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-f12e75623cc509fe61688534ae6e21b7-42')"
+         onclick="openImageModal('img-f12e75623cc509fe61688534ae6e21b7-43')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-f12e75623cc509fe61688534ae6e21b7-42" class="image-modal" onclick="closeImageModal('img-f12e75623cc509fe61688534ae6e21b7-42')">
+<div id="img-f12e75623cc509fe61688534ae6e21b7-43" class="image-modal" onclick="closeImageModal('img-f12e75623cc509fe61688534ae6e21b7-43')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-2-1.png" alt="Query logs with event id 5001">
     <div class="image-modal-caption">Query logs with event id 5001</div>
@@ -6347,12 +6484,12 @@ document.addEventListener('keydown', function(event) {
          width="800"
          
          class="clickable-image"
-         onclick="openImageModal('img-3d59bc07c36f8ce72a49939dafe67eff-43')"
+         onclick="openImageModal('img-3d59bc07c36f8ce72a49939dafe67eff-44')"
          style="cursor: pointer;">
 </div>
 
 
-<div id="img-3d59bc07c36f8ce72a49939dafe67eff-43" class="image-modal" onclick="closeImageModal('img-3d59bc07c36f8ce72a49939dafe67eff-43')">
+<div id="img-3d59bc07c36f8ce72a49939dafe67eff-44" class="image-modal" onclick="closeImageModal('img-3d59bc07c36f8ce72a49939dafe67eff-44')">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" src="http://localhost:1313/Active-Directory-Attack-Defense/images/lab-setup-test-2-2.png" alt="Log provided by windows defender">
     <div class="image-modal-caption">Log provided by windows defender</div>
