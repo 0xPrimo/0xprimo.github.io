@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Primo</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://0xprimo.github.io/posts/</link>
     <description>Recent content in Posts on Primo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 15 Jun 2025 12:37:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jun 2025 12:37:45 +0000</lastBuildDate><atom:link href="https://0xprimo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Red/Blue Team Lab Setup</title>
-      <link>http://localhost:1313/posts/ad-attack-defense-lab-setup/</link>
+      <link>https://0xprimo.github.io/posts/ad-attack-defense-lab-setup/</link>
       <pubDate>Sun, 15 Jun 2025 12:37:45 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/ad-attack-defense-lab-setup/</guid>
+      <guid>https://0xprimo.github.io/posts/ad-attack-defense-lab-setup/</guid>
       
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;This lab guide walks you through setting up an environment to monitor and analyze Windows event logs using Elasticsearch, Kibana, Fleet Server, Sysmon, and Elastic Agent.&lt;/p&gt;
@@ -23,19 +23,19 @@
 
 
 &lt;div class=&#34;clickable-image-container&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; 
+    &lt;img src=&#34;https://0xprimo.github.io/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; 
          alt=&#34;Lab diagram&#34;
          width=&#34;800&#34;
          
          class=&#34;clickable-image&#34;
-         onclick=&#34;openImageModal(&#39;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#39;)&#34;
+         onclick=&#34;openImageModal(&#39;img-df15ce2f875854925d40561ce3e64ab8-0&#39;)&#34;
          style=&#34;cursor: pointer;&#34;&gt;
 &lt;/div&gt;
 
 
-&lt;div id=&#34;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#34; class=&#34;image-modal&#34; onclick=&#34;closeImageModal(&#39;img-c2a7eec18fb44e5e5366c92f91a4657c-0&#39;)&#34;&gt;
+&lt;div id=&#34;img-df15ce2f875854925d40561ce3e64ab8-0&#34; class=&#34;image-modal&#34; onclick=&#34;closeImageModal(&#39;img-df15ce2f875854925d40561ce3e64ab8-0&#39;)&#34;&gt;
     &lt;span class=&#34;image-modal-close&#34;&gt;&amp;times;&lt;/span&gt;
-    &lt;img class=&#34;image-modal-content&#34; src=&#34;http://localhost:1313/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; alt=&#34;Lab diagram&#34;&gt;
+    &lt;img class=&#34;image-modal-content&#34; src=&#34;https://0xprimo.github.io/Active-Directory-Attack-Defense/images/lab-diagram.png&#34; alt=&#34;Lab diagram&#34;&gt;
     &lt;div class=&#34;image-modal-caption&#34;&gt;Lab diagram&lt;/div&gt;
 &lt;/div&gt;
 
@@ -165,10 +165,10 @@ document.addEventListener(&#39;keydown&#39;, function(event) {
     
     <item>
       <title>Slipping through defender with a simple shellcode loader</title>
-      <link>http://localhost:1313/posts/slipping-through-defender/</link>
+      <link>https://0xprimo.github.io/posts/slipping-through-defender/</link>
       <pubDate>Fri, 21 Feb 2025 15:37:42 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/slipping-through-defender/</guid>
+      <guid>https://0xprimo.github.io/posts/slipping-through-defender/</guid>
       
       <description>&lt;blockquote&gt;
 &lt;p&gt;This blog is for educational purposes only. The content provided is intended to share knowledge and insights related to cybersecurity.&lt;/p&gt;&lt;/blockquote&gt;
